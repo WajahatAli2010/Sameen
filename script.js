@@ -13,7 +13,6 @@ const setMenu = (open) => {
 
 menuToggle?.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
 mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
-
 document.addEventListener('click', (event) => {
   if (mobileMenu.classList.contains('open') && !mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) setMenu(false);
 });
@@ -32,25 +31,23 @@ if ('IntersectionObserver' in window) {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
   revealItems.forEach(item => observer.observe(item));
-} else {
-  revealItems.forEach(item => item.classList.add('is-visible'));
-}
+} else revealItems.forEach(item => item.classList.add('is-visible'));
 
 const filters = document.querySelectorAll('.filter');
 const products = document.querySelectorAll('.product-card');
-filters.forEach(filter => {
-  filter.addEventListener('click', () => {
-    filters.forEach(item => item.classList.remove('active'));
-    filter.classList.add('active');
-    const selected = filter.dataset.filter;
-    products.forEach(product => {
-      const visible = selected === 'all' || product.dataset.category.split(' ').includes(selected);
-      product.classList.toggle('hide', !visible);
-    });
+const applyFilter = (selected) => {
+  filters.forEach(item => item.classList.toggle('active', item.dataset.filter === selected));
+  products.forEach(product => {
+    const visible = selected === 'all' || product.dataset.category.split(' ').includes(selected);
+    product.classList.toggle('hide', !visible);
   });
+};
+filters.forEach(filter => filter.addEventListener('click', () => applyFilter(filter.dataset.filter)));
+
+document.querySelectorAll('[data-jump-filter]').forEach(card => {
+  card.addEventListener('click', () => applyFilter(card.dataset.jumpFilter));
 });
 
-// Keep same-page navigation predictable when the fixed header is present.
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', event => {
     const target = document.querySelector(link.getAttribute('href'));
