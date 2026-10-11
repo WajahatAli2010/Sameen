@@ -34,10 +34,38 @@ if ('IntersectionObserver' in window) {
 } else revealItems.forEach(item => item.classList.add('is-visible'));
 
 const filters = document.querySelectorAll('.filter');
-const products = document.querySelectorAll('.product-card');
+const products = () => document.querySelectorAll('.product-card');
+
+const SAMEEN_PRODUCTS_KEY = 'sameen-admin-products-v1';
+const escapeProductText = (value) => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+function renderAdminProducts() {
+  const grid = document.getElementById('product-grid');
+  if (!grid) return;
+  grid.querySelectorAll('[data-admin-product="true"]').forEach(card => card.remove());
+  let catalog = [];
+  try {
+    const parsed = JSON.parse(localStorage.getItem(SAMEEN_PRODUCTS_KEY) || '[]');
+    if (Array.isArray(parsed)) catalog = parsed;
+  } catch { catalog = []; }
+  catalog.forEach((product, index) => {
+    if (!product || !product.name || !product.image) return;
+    const card = document.createElement('article');
+    card.className = 'product-card reveal is-visible';
+    card.dataset.adminProduct = 'true';
+    card.dataset.category = product.category === 'occasion' ? 'occasion girls' : (product.category || 'all');
+    const label = product.categoryLabel || ({girls:'Girls',boys:'Boys',baby:'Baby & Toddler',occasion:'Occasion'})[product.category] || 'Kids';
+    const sizeText = product.sizes ? ' · Sizes: ' + escapeProductText(product.sizes) : '';
+    card.innerHTML = '<div class="product-image"><img src="' + escapeProductText(product.image) + '" alt="' + escapeProductText(product.name) + '" loading="lazy"><span>' + String(index + 9).padStart(2, '0') + '</span><b class="product-badge">New</b></div><div class="product-meta"><div><p>' + escapeProductText(label) + escapeProductText(sizeText) + '</p><h3>' + escapeProductText(product.name) + '</h3>' + (product.description ? '<p>' + escapeProductText(product.description) + '</p>' : '') + '</div><strong>Rs. ' + Number(product.price || 0).toLocaleString('en-PK') + '</strong></div>';
+    grid.appendChild(card);
+  });
+}
+renderAdminProducts();
+window.addEventListener('storage', event => {
+  if (event.key === SAMEEN_PRODUCTS_KEY) { renderAdminProducts(); applyFilter(document.querySelector('.filter.active')?.dataset.filter || 'all'); }
+});
 const applyFilter = (selected) => {
   filters.forEach(item => item.classList.toggle('active', item.dataset.filter === selected));
-  products.forEach(product => {
+  products().forEach(product => {
     const visible = selected === 'all' || product.dataset.category.split(' ').includes(selected);
     product.classList.toggle('hide', !visible);
   });
