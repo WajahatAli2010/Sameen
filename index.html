@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sameen — a kids garments showcase for discovering clothing collections and visiting the physical store.">
+  <meta name="theme-color" content="#f7efe7">
+  <title>Sameen — Little Styles. Big Smiles.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="site-noise" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Sameen home"><span>Sameen</span><i></i></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
+      <div class="desktop-nav">
+        <a href="#home">Home</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit Us</a>
+        <a class="nav-social" href="#visit">Instagram ↗</a>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="#home">Home</a><a href="#collections">Collections</a><a href="#about">About</a><a href="#visit">Visit Us</a>
+      <a href="#visit">Instagram ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> KIDS · CLOTHING · STYLE</p>
+          <h1>Little styles.<br><em>Big smiles.</em></h1>
+          <p class="hero-text">A playful edit of kids' garments made for everyday adventures, celebrations, and all the little moments in between.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#collections">Explore collections <span>↘</span></a>
+            <a class="button button-light" href="#visit">Visit our store <span>↗</span></a>
+          </div>
+          <div class="hero-note"><strong>PHYSICAL STORE</strong><span>Browse in person · No online ordering</span></div>
+        </div>
+        <div class="hero-visual reveal reveal-delay-1">
+          <div class="hero-image-wrap">
+            <img src="https://images.pexels.com/photos/17661822/pexels-photo-17661822.jpeg?cs=srgb&dl=pexels-photosbyanas-17661822.jpg&fm=jpg" alt="Child wearing a purple occasion dress outdoors" fetchpriority="high">
+            <div class="image-tag"><span>01</span><b>Occasion edit</b></div>
+          </div>
+          <div class="floating-pill">Made for <b>little moments</b> ✦</div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#collections" aria-label="Scroll to collections"><span></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <section class="section collections" id="collections">
+      <div class="container">
+        <div class="section-head reveal"><div><p class="eyebrow"><span></span> 01 — COLLECTIONS</p><h2>Find their <em>next favourite.</em></h2></div><p class="section-intro">A curated starting point for little wardrobes. Categories are easy to update as the collection grows.</p></div>
+        <div class="collection-grid">
+          <a class="collection-card card-large reveal" href="#showcase"><img src="https://images.unsplash.com/photo-1609922565823-82bd31c72720?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400" alt="Girl in a pink and white floral dress"><div><small>01</small><h3>Girls' Wear</h3><span>Explore ↗</span></div></a>
+          <a class="collection-card reveal" href="#showcase"><img src="https://images.unsplash.com/photo-1662141047939-56bd1fd44ebd?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200" alt="Boy wearing casual clothing outdoors"><div><small>02</small><h3>Boys' Wear</h3><span>Explore ↗</span></div></a>
+          <a class="collection-card reveal" href="#showcase"><img src="https://images.unsplash.com/photo-1568657603787-650a3306863d?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200" alt="Toddler wearing a striped shirt"><div><small>03</small><h3>Baby & Toddler</h3><span>Explore ↗</span></div></a>
+          <div class="collection-card collection-text reveal"><span class="spark">✦</span><p>Everyday essentials, party looks, and fresh arrivals — <strong>all in one place.</strong></p><a href="#showcase">View showcase ↘</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section showcase" id="showcase">
+      <div class="container">
+        <div class="section-head reveal"><div><p class="eyebrow"><span></span> 02 — THE SHOWCASE</p><h2>Looks worth <em>a closer look.</em></h2></div><p class="section-intro">Example catalogue pieces with illustrative prices. These are for display only — availability and pricing should be confirmed in store.</p></div>
+        <div class="filters reveal" role="group" aria-label="Filter clothing showcase">
+          <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="girls">Girls</button><button class="filter" data-filter="boys">Boys</button><button class="filter" data-filter="baby">Baby</button><button class="filter" data-filter="occasion">Occasion</button>
+        </div>
+        <div class="product-grid" id="product-grid">
+          <article class="product-card reveal" data-category="girls occasion"><div class="product-image"><img src="https://images.pexels.com/photos/17661822/pexels-photo-17661822.jpeg?cs=srgb&dl=pexels-photosbyanas-17661822.jpg&fm=jpg" alt="Purple occasion dress for a child" loading="lazy"><span>01</span></div><div class="product-meta"><div><p>Girls · Occasion</p><h3>Lavender Party Dress</h3></div><strong>PKR 3,500</strong></div></article>
+          <article class="product-card reveal" data-category="boys"><div class="product-image"><img src="https://images.unsplash.com/photo-1662141047939-56bd1fd44ebd?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1000" alt="Boy in casual clothing" loading="lazy"><span>02</span></div><div class="product-meta"><div><p>Boys · Casual</p><h3>Weekend Cotton Tee</h3></div><strong>PKR 1,000</strong></div></article>
+          <article class="product-card reveal" data-category="baby"><div class="product-image"><img src="https://images.unsplash.com/photo-1568657603787-650a3306863d?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1000" alt="Toddler in a striped shirt" loading="lazy"><span>03</span></div><div class="product-meta"><div><p>Baby · Everyday</p><h3>Soft Stripe Set</h3></div><strong>PKR 1,500</strong></div></article>
+          <article class="product-card reveal" data-category="girls"><div class="product-image"><img src="https://images.unsplash.com/photo-1609922565823-82bd31c72720?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1000" alt="Girl in floral clothing" loading="lazy"><span>04</span></div><div class="product-meta"><div><p>Girls · Everyday</p><h3>Floral Day Outfit</h3></div><strong>PKR 2,000</strong></div></article>
+          <article class="product-card reveal" data-category="boys"><div class="product-image"><img src="https://images.unsplash.com/photo-1662141047939-56bd1fd44ebd?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1000&sat=-10" alt="Boy wearing a casual outfit outdoors" loading="lazy"><span>05</span></div><div class="product-meta"><div><p>Boys · Everyday</p><h3>Easy Trousers Edit</h3></div><strong>PKR 1,500</strong></div></article>
+          <article class="product-card reveal" data-category="girls occasion"><div class="product-image"><img src="https://images.pexels.com/photos/17661822/pexels-photo-17661822.jpeg?cs=srgb&dl=pexels-photosbyanas-17661822.jpg&fm=jpg" alt="Child in a purple formal dress" loading="lazy"><span>06</span></div><div class="product-meta"><div><p>Girls · Occasion</p><h3>Twirl & Shine Set</h3></div><strong>PKR 2,500</strong></div></article>
+          <article class="product-card reveal" data-category="baby"><div class="product-image"><img src="https://images.unsplash.com/photo-1568657603787-650a3306863d?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1000&sat=-5" alt="Toddler wearing a monochrome striped top" loading="lazy"><span>07</span></div><div class="product-meta"><div><p>Baby · Everyday</p><h3>Little Stripe Tee</h3></div><strong>PKR 1,000</strong></div></article>
+          <article class="product-card reveal" data-category="girls occasion"><div class="product-image"><img src="https://images.unsplash.com/photo-1609922565823-82bd31c72720?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1000" alt="Girl in a floral dress and hat" loading="lazy"><span>08</span></div><div class="product-meta"><div><p>Girls · Occasion</p><h3>Garden Party Look</h3></div><strong>PKR 3,000</strong></div></article>
+        </div>
+        <p class="showcase-note">Illustrative catalogue pricing · Not verified inventory · Visit Sameen to confirm current pieces and prices.</p>
+      </div>
+    </section>
+
+    <section class="statement" id="about">
+      <div class="container statement-grid">
+        <p class="eyebrow reveal"><span></span> 03 — ABOUT SAMEEN</p>
+        <div class="reveal"><h2>Clothes for <em>every little chapter.</em></h2><p>Sameen is a physical kids' garments store bringing together playful everyday pieces and outfits for special moments. Browse the showcase here, then visit the store to see what is available.</p></div>
+      </div>
+    </section>
+
+    <section class="lookbook section">
+      <div class="container">
+        <div class="lookbook-top reveal"><p class="eyebrow"><span></span> 04 — STYLE SPOTLIGHT</p><span>LOOKBOOK / 01</span></div>
+        <div class="lookbook-grid">
+          <div class="lookbook-copy reveal"><p class="big-index">01</p><h2>Playful by nature.<br><em>Polished by design.</em></h2><p>Mix casual staples with occasion-ready pieces for looks that feel special without trying too hard.</p><a class="text-link" href="#showcase">Browse the showcase ↗</a></div>
+          <div class="lookbook-image reveal"><img src="https://images.pexels.com/photos/17661822/pexels-photo-17661822.jpeg?cs=srgb&dl=pexels-photosbyanas-17661822.jpg&fm=jpg" alt="Child modelling a purple dress in a garden" loading="lazy"><span>STYLE<br>SPOTLIGHT</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit section" id="visit">
+      <div class="container visit-card reveal">
+        <div class="visit-main"><p class="eyebrow"><span></span> 05 — VISIT SAMEEN</p><h2>Come see it <em>in person.</em></h2><p>Sameen is a physical store. Bring the little ones, browse the current collection, check sizing, and find the pieces that feel right.</p><div class="visit-actions"><a class="button button-dark" href="#contact-placeholders">Store details ↓</a><a class="button button-light" href="#contact-placeholders">Contact links ↗</a></div></div>
+        <div class="details" id="contact-placeholders">
+          <div class="detail"><span>ADDRESS</span><strong>Store address — coming soon</strong><small>Replace this placeholder with the real location.</small></div>
+          <div class="detail"><span>OPENING HOURS</span><strong>Hours — coming soon</strong><small>Add the actual store schedule here.</small></div>
+          <div class="detail"><span>WHATSAPP</span><strong>Number — coming soon</strong><small>Use a click-to-chat link once supplied.</small></div>
+          <div class="social-row"><a href="#" aria-label="Instagram placeholder">Instagram ↗</a><a href="#" aria-label="Facebook placeholder">Facebook ↗</a><a href="#" aria-label="WhatsApp placeholder">WhatsApp ↗</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="#home"><span>Sameen</span><i></i></a><p>Little styles, big smiles.<br>A kids' garments showcase.</p></div><div><span class="footer-label">EXPLORE</span><a href="#collections">Collections</a><a href="#showcase">Showcase</a><a href="#about">About</a><a href="#visit">Visit Us</a></div><div><span class="footer-label">CONNECT</span><a href="#visit">Instagram</a><a href="#visit">Facebook</a><a href="#visit">WhatsApp</a></div></div><div class="container footer-bottom"><span>© 2026 Sameen</span><span>Physical store · No online ordering</span><a href="#top">Back to top ↑</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
